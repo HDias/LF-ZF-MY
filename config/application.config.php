@@ -1,7 +1,10 @@
 <?php
 return array(
 		'modules' => array(
-				'Application',
+				'ZendDeveloperTools',
+				'DoctrineModule',
+				'DoctrineORMModule',
+				'Application',	
 		),
 		'module_listener_options' => array(
 				'module_paths' => array(
