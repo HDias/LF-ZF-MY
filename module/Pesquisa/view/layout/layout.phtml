@@ -1,0 +1,95 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<!--start Facebook Open Graph Protocol-->
+	  <!-- Title Head -->
+        <?php
+        $NAME_APPLICATION = 'LimpezaFacil';
+        echo $this
+                ->headTitle($NAME_APPLICATION)
+                ->setSeparator(' - ')
+                ->setAutoEscape(false)
+        ;
+        ?>
+ 
+		<!-- Meta Head -->
+        <?php
+        echo $this
+                ->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ;
+        ?>
+ 		 <!-- Styles -->
+        <?php
+        echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favico.ico'))
+        		->prependStylesheet($this->basePath() . '/css/extra.css')
+                ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                ->prependStylesheet($this->basePath() . '/css/style.css')
+        ;
+        ?>
+	
+	
+	
+	<!-- Fav and touch icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144"
+		href="img/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114"
+		href="img/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72"
+		href="img/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed"
+		href="img/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="img/favicon.png">
+	<!-- Scripts -->
+        <?php
+        echo $this
+                ->headScript()
+                ->prependFile($this->basePath() . '/js/masked-input.js')
+                ->prependFile($this->basePath() . '/js/facebook.js')
+		        ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+		        ->prependFile($this->basePath() . '/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+		        ->prependFile($this->basePath() . '/js/scripts.js')
+		        ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+		        ->prependFile($this->basePath() . '/js/jquery.min.js')
+        ;
+ 
+        echo $this->inlineScript();
+        ?>
+	
+	
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-4 col-md-offset-4">
+
+				<img class="img-responsive" width="100%" alt="Limpeza Fácil"
+					src="/img/logo3.png">
+				<div class="vert-text">
+					<h1>
+						+ tempo <em>Livre</em>
+					</h1>
+					<h4>
+						+ tempo pra você <em>fazer</em> o que <em>gosta</em>
+					</h4>
+				</div>
+			</div>
+		</div>
+		<hr>
+		
+		<?php echo $this->content; ?>
+		
+		<hr>
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<h3 class="text-center">LimpezaFacil 2014 - Gurupi</h3>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

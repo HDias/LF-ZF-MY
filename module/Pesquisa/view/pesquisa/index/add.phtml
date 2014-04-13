@@ -1,0 +1,42 @@
+<?php $this->headScript()->captureStart(); ?>
+jQuery(function($){ $("#telefone").mask("(99)9999-9999"); });
+
+<?php $this->headScript()->captureEnd(); ?>
+<div class="row clearfix ">
+	<div class="col-md-6 column">
+		<div class="video-container">
+			<iframe
+				src="//player.vimeo.com/video/90059051?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff"
+				width="500" height="281" frameborder="0" webkitallowfullscreen
+				mozallowfullscreen allowfullscreen> </iframe>
+		</div>
+	</div>
+	<div class="col-md-6 column">
+		<div class="col-md-12 column">
+			<?php
+			$form = $this->form;
+			$form->setAttribute('action',
+			$this->url('cliente',
+							array(	'controller' => 'ClienteController',
+							'action'=>'add'
+							)));
+			$form->setAttribute('class', 'form-horizontal');
+			$form->prepare();
+			
+			echo $this->form()->openTag($form);
+			
+			echo $this->formHidden($form->get('id')); ?>
+				<?php echo $this->formRow($form->get('nome')); ?>
+				<?php echo $this->formRow($form->get('email')); ?>
+				<?php echo $this->formRow($form->get('telefone')); ?>
+				<?php echo $this->formRow($form->get('setor')); ?>
+				<p class="help-block">Se não souber o setor pode digitar o
+					endereço.</p>
+			</div>
+			<?php echo $this->formSubmit($form->get('submit')); ?>
+			<?php echo $this->form()->closeTag(); ?>
+		</div>
+	</div>
+
+</div>
+<div id="fb-root"></div>
