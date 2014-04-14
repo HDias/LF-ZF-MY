@@ -5,14 +5,20 @@ jQuery(function($){ $("#telefone").mask("(99)9999-9999"); });
 <div class="row clearfix ">
 	<div class="col-md-6 column">
 		<div class="video-container">
-			<iframe src="//player.vimeo.com/video/90059051?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1" 
+			<iframe width="560" height="315" src="//www.youtube.com/embed/tUtL1nHr5tc?autoplay=1&fs=1" 
+				frameborder="0" 
+				allowfullscreen>
+				
+			</iframe>
+			
+			<!--  <iframe src="//player.vimeo.com/video/90059051?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1" 
 				width="500" 
 				height="281" 
 				frameborder="0" 
 				webkitallowfullscreen 
 				mozallowfullscreen 
 				allowfullscreen>
-			</iframe>
+			</iframe> -->
 		</div>
 	</div>
 	<div class="col-md-6 column">
@@ -34,11 +40,11 @@ jQuery(function($){ $("#telefone").mask("(99)9999-9999"); });
 				<?php echo $this->formRow($form->get('email')); ?>
 				<?php echo $this->formRow($form->get('telefone')); ?>
 				<?php echo $this->formRow($form->get('setor')); ?>
-				<p class="help-block">Se não souber o setor pode digitar o
-					endereço.</p>
+				<p class="help-block">Se não souber o setor pode digitar o endereço.</p>
+			
+				<?php echo $this->formSubmit($form->get('submit')); ?>
+				<?php echo $this->form()->closeTag(); ?>
 			</div>
-			<?php echo $this->formSubmit($form->get('submit')); ?>
-			<?php echo $this->form()->closeTag(); ?>
 		</div>
 	</div>
 
