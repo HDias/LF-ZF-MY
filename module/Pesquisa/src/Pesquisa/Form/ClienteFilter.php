@@ -10,90 +10,87 @@ class ClienteFilter extends InputFilter{
 				'filters' => array(
 						array('name' => 'StripTags'),
 						array('name' => 'StringTrim'),
-					),
+				),
 				'validators' => array(
 						array(
 								'name'    => 'StringLength',
 								'options' => array(
 										'encoding' => 'UTF-8',
-										'min'      => 1,
 										'max'      => 250,
 										'messages' => array(
-												'stringLengthTooLong' => 'Digite no máximo 250 caracteres.'
+												'stringLengthTooLong' => 'Seu nome parece ser muito grande. Tente novamente!'
 										),
 								),
+						),
+						array(
 								'name' => 'NotEmpty',
 								'options'=>array(
 										'messages'=>array(
-												'isEmpty'=>'Por favor, digite seu nome'
-												)
-										),
+												'isEmpty'=>'Por favor, digite o seu nome'
+										)
+								),
 						),
 				),
 		));
-		/*
-		$validator = new \Zend\Validator\EmailAddress;
-		$validator->setOptions(array('domain'=>FALSE));
-		
-		$this->add(array(
-				'name' => 'email',
-				'validators' => array($validator)
-		));*/
-		
 		$this->add(array(
 				'name' => 'email',
 				'filters' => array(
 						array('name' => 'StripTags'),
 						array('name' => 'StringTrim'),
-					),
+				),
 				'validators' => array(
-						array(								
+						array(
+								'name' => 'EmailAddress',
+								'options' => array(
+										'useDomainCheck' => false,
+										'messages'=>array(
+												'emailAddressInvalidFormat' => 'Acho que seu email está errado',
+										)
+								)
+						),
+						array(
 								'name'    => 'StringLength',
 								'options' => array(
 										'encoding' => 'UTF-8',
-										'min'      => 1,
 										'max'      => 250,
 										'messages' => array(
-												'stringLengthTooLong' => 'Digite no máximo 250 caracteres.'
+												'stringLengthTooLong' => 'Seu email parece ser muito grande. Tente novamente!'
 										),
 								),
+						),
+						array(
 								'name' => 'NotEmpty',
 								'options'=>array(
 										'messages'=>array(
-												'isEmpty'=>'Por favor, digite seu email'
-												)
-									),
-								'name' => 'EmailAddress',
-								'options' => array(
-										'messages'=>array(
-												'emailAddressInvalidFormat' => 'Acho que seu email está errado'
-												)
+												'isEmpty'=>'Por favor, digite o seu email'
+										)
 								),
 						),
 				),
-				
+
 		));
 		$this->add(array(
 				'name' => 'telefone',
 				'filters' => array(
 						array('name' => 'StripTags'),
 						array('name' => 'StringTrim'),
-					),
+				),
 				'validators' => array(
 						array(
 								'name'    => 'StringLength',
 								'options' => array(
 										'encoding' => 'UTF-8',
-										'min'      => 1,
 										'max'      => 250,
 										'messages' => array(
-												'stringLengthTooLong' => 'Digite no máximo 250 caracteres.'
+												'stringLengthTooLong' => 'Seu telefone parece ser muito grande. Tente novamente!'
 										),
 								),
+						),
+						array(
 								'name' => 'NotEmpty',
 								'options'=>array(
 										'messages'=>array(
-												'isEmpty'=>'Por favor, digite o número do celular'
+												'isEmpty'=>'Por favor, digite o seu telefone'
 										)
 								),
 						),
@@ -104,18 +101,19 @@ class ClienteFilter extends InputFilter{
 				'filters' => array(
 						array('name' => 'StripTags'),
 						array('name' => 'StringTrim'),
-					),
+				),
 				'validators' => array(
 						array(
 								'name'    => 'StringLength',
 								'options' => array(
 										'encoding' => 'UTF-8',
-										'min'      => 1,
 										'max'      => 250,
 										'messages' => array(
-												'stringLengthTooLong' => 'Digite no máximo 250 caracteres.'
+												'stringLengthTooLong' => 'Seu setor parece ser muito grande. Tente novamente!'
 										),
 								),
+						),
+						array(
 								'name' => 'NotEmpty',
 								'options'=>array(
 										'messages'=>array(
@@ -125,8 +123,8 @@ class ClienteFilter extends InputFilter{
 						),
 				),
 		));
-		
+
 	}
-	
-	
+
+
 }
